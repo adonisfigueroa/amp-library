@@ -68,6 +68,7 @@ class ImgTagTransformPass extends BasePass
             $dom_el = $el->get(0);
             if ($this->isSvg($dom_el)) {
                 // @TODO This should be marked as a validation warning later?
+	            $el->remove();
                 continue;
             }
             $lineno = $this->getLineNo($dom_el);
