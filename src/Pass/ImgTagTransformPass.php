@@ -66,11 +66,6 @@ class ImgTagTransformPass extends BasePass
         foreach ($all_a as $el) {
             /** @var \DOMElement $dom_el */
             $dom_el = $el->get(0);
-            if ($this->isSvg($dom_el)) {
-                // @TODO This should be marked as a validation warning later?
-	            $el->remove();
-                continue;
-            }
             $lineno = $this->getLineNo($dom_el);
             $context_string = $this->getContextString($dom_el);
             $has_height_and_width = $this->setResponsiveImgHeightAndWidth($el);
